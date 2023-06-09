@@ -20,19 +20,17 @@ bindkey -v
 ##########
 
 # configuration
-export EDITOR='nvim'
-export VISUAL='codium'
+export EDITOR='lvim'
+export VISUAL='lvim'
 export MANPAGER="sh -c 'col -bx | bat -l man -p --paging always'"
-export TERM=xterm-kitty
 
 # Path
 export PATH=/home/cxa/.cargo/bin:$PATH
 export PATH=/home/cxa/.local/bin:$PATH
-export PATH=/home/cxa/devel/node-v18.16.0-linux-x64/bin:$PATH
 export PATH=/home/cxa/.luarocks/bin:$PATH
-export PATH=/home/cxa/.nix-profile/bin:$PATH
 export PATH=/home/cxa/.config/emacs/bin:$PATH
 export PATH=/home/cxa/Games:$PATH
+export PATH=/home/cxa/.config/script:$PATH
 export PATH=$PATH:/home/cxa/.spicetify
 
 #########
@@ -47,9 +45,9 @@ alias ll="exa -alFh --icons"
 alias tree="exa --tree -alFh"
 
 # editor
-alias v="nvim"
-alias vi="nvim"
-alias vim="nvim"
+alias v="lvim"
+alias vi="lvim"
+alias vim="lvim"
 
 # rusty
 alias cat="bat"
@@ -68,12 +66,12 @@ alias dl="aria2c"
 ###################
 
 # nala / apr
-alias apt="sudo apt-fast"
-alias update="sudo apt-fast update && sudo apt-fast upgrade"
+alias apt="sudo nala"
+alias update="sudo nala upgrade"
 
 # nix
-alias nix-in="nix-env -iA"
-alias nix-un="nix-env -e"
+# alias nix-in="nix-env -iA"
+# alias nix-un="nix-env -e"
 
 # pacstall
 alias pac="pacstall"
