@@ -1,0 +1,23 @@
+#!/bin/bash
+
+fetch() {
+  sp metadata | grep $1 | tr '|' '\n' | tail -n 1
+}
+
+G='\033[0;32m'
+W='\033[1;37m'
+NC='\033[0m'
+
+
+artist=$(fetch "artist")
+title=$(fetch "title")
+album=$(fetch "album|")
+art=$(jp2a --colors --height=20 $(fetch "artUrl"))
+
+echo -e "
+$art
+
+${G}Artist \t ${NC}: \t ${W}$artist
+${G}Title \t ${NC}: \t ${W}$title
+${G}Album \t ${NC}: \t ${W}$album
+"
