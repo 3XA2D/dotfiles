@@ -25,13 +25,13 @@ export VISUAL='lvim'
 export MANPAGER="sh -c 'col -bx | bat -l man -p --paging always'"
 
 # Path
-export PATH=/home/cxa/.cargo/bin:$PATH
-export PATH=/home/cxa/.local/bin:$PATH
-export PATH=/home/cxa/.luarocks/bin:$PATH
-export PATH=/home/cxa/.config/emacs/bin:$PATH
-export PATH=/home/cxa/Games:$PATH
-export PATH=/home/cxa/.config/script:$PATH
-export PATH=$PATH:/home/cxa/.spicetify
+export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.luarocks/bin:$PATH
+export PATH=$HOME/.config/emacs/bin:$PATH
+export PATH=$HOME/Games:$PATH
+export PATH=$HOME/.config/script:$PATH
+export PATH=$PATH:$HOME/.spicetify
 
 #########
 # Alias #
@@ -66,8 +66,8 @@ alias dl="aria2c"
 ###################
 
 # nala / apr
-alias apt="sudo nala"
-alias update="sudo nala upgrade"
+alias apt="nala"
+alias update="nala upgrade"
 
 # nix
 # alias nix-in="nix-env -iA"
