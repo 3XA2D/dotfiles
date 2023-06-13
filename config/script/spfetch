@@ -13,12 +13,12 @@ artist=$(fetch "artist")
 title=$(fetch "title")
 album=$(fetch "album|")
 lenght=$(fetch "length")
-art=$(jp2a --colors --height=10 $(fetch "artUrl"))
+art=$(jp2a --colors --height=6 $(fetch "artUrl"))
 meta=$(echo -e "
 ${G}Artist\t${NC}:\t${W}$artist
 ${G}Title\t${NC}:\t${W}$title
 ${G}Album\t${NC}:\t${W}$album
-${G}Length\t${NC}:\t${W}$(($lenght / 1000000 / 60)) Minutes
+${G}Length\t${NC}:\t${W}$(($lenght / 60000000)) Minutes
 ")
 
 paste <(printf "$art") <(printf "$meta")
