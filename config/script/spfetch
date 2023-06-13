@@ -12,12 +12,13 @@ NC='\033[0m'
 artist=$(fetch "artist")
 title=$(fetch "title")
 album=$(fetch "album|")
-art=$(jp2a --colors --height=20 $(fetch "artUrl"))
+lenght=$(fetch "length")
+art=$(jp2a --colors --height=10 $(fetch "artUrl"))
+meta=$(echo -e "
+${G}Artist\t${NC}:\t${W}$artist
+${G}Title\t${NC}:\t${W}$title
+${G}Album\t${NC}:\t${W}$album
+${G}Length\t${NC}:\t${W}$(($lenght / 1000000 / 60)) Minutes
+")
 
-echo -e "
-$art
-
-${G}Artist \t ${NC}: \t ${W}$artist
-${G}Title \t ${NC}: \t ${W}$title
-${G}Album \t ${NC}: \t ${W}$album
-"
+paste <(printf "$art") <(printf "$meta")
