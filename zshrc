@@ -20,8 +20,8 @@ bindkey -v
 ##########
 
 # configuration
-export EDITOR='lvim'
-export VISUAL='lvim'
+export EDITOR='nvim'
+export VISUAL='nvim'
 export MANPAGER="sh -c 'col -bx | bat -l man -p --paging always'"
 
 # Path
@@ -30,6 +30,8 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.luarocks/bin:$PATH
 export PATH=$HOME/.config/emacs/bin:$PATH
 export PATH=$HOME/Games:$PATH
+export PATH=$HOME/Dev/Flutt/flutter/bin:$PATH
+export PATH=$HOME/Dev/android-studio/bin:$PATH
 export PATH=$HOME/.config/script:$PATH
 export PATH=$PATH:$HOME/.spicetify
 
@@ -45,9 +47,9 @@ alias ll="exa -alFh --icons"
 alias tree="exa --tree -alFh"
 
 # editor
-alias v="lvim"
-alias vi="lvim"
-alias vim="lvim"
+alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"
 
 # rusty
 alias cat="bat"
@@ -60,6 +62,9 @@ alias :q="exit"
 alias reload="source ~/.zshrc"
 alias 2ND-HDD="cd /media/cxa/2ND-HDD/"
 alias dl="aria2c"
+
+# spfetch
+alias spf="while sleep 1; do spfetch > /tmp/spf; clear; /bin/cat /tmp/spf; done"
 
 ###################
 # package manager #

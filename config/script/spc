@@ -1,0 +1,8 @@
+#!/bin/bash
+
+G='\033[0;32m'
+W='\033[1;37m'
+while true; do
+  read -p "$(echo -e "${G}Spotify${W} $") " arg
+  sp $arg
+done
