@@ -3,8 +3,6 @@ clear
 # pfetch
 fortune 100% fortunes | cowsay
 
-
-
 # Oh My Zsh
 export ZSH="$HOME/.oh-my-zsh"
 plugins=(git zsh-syntax-highlighting)
@@ -60,7 +58,7 @@ alias find="fd"
 # quality of life
 alias :q="exit"
 alias reload="source ~/.zshrc"
-alias 2ND-HDD="cd /media/cxa/2ND-HDD/"
+alias 2ND-HDD="cd /run/media/cxa/2ND-HDD/"
 alias dl="aria2c"
 
 # spfetch
@@ -71,18 +69,19 @@ alias spf="while sleep 1; do spfetch > /tmp/spf; clear; /bin/cat /tmp/spf; done"
 ###################
 
 # nala / apr
-alias apt="nala"
-alias update="nala upgrade"
+# alias apt="nala"
+# alias update="nala upgrade"
+alias update="sudo dnf update"
 
 # nix
 # alias nix-in="nix-env -iA"
 # alias nix-un="nix-env -e"
 
 # pacstall
-alias pac="pacstall"
-autoload bashcompinit
-bashcompinit
-source /usr/share/bash-completion/completions/pacstall
+# alias pac="pacstall"
+# autoload bashcompinit
+# bashcompinit
+# source /usr/share/bash-completion/completions/pacstall
 
 #######
 # Fzf #
