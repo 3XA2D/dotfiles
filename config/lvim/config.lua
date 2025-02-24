@@ -4,6 +4,13 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 
+-- Set
+vim.opt.rnu = true
+
+-- Color
+lvim.transparent_window = true
+
+-- Plugin
 lvim.plugins = {
   {
     "christoomey/vim-tmux-navigator"

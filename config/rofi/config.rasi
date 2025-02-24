@@ -3,6 +3,6 @@ configuration{
     show-icons: false;
     terminal: "kitty";
     drun-display-format: "{name}";
-    sidebar-mode: true;
+    sidebar-mode: false;
 }
 @theme "themes/simple-tokyonight.rasi"

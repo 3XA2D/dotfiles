@@ -18,8 +18,8 @@ bindkey -v
 ##########
 
 # configuration
-export EDITOR='nvim'
-export VISUAL='nvim'
+export EDITOR='lvim'
+export VISUAL='lvim'
 export MANPAGER="sh -c 'col -bx | bat -l man -p --paging always'"
 
 # Path
@@ -45,9 +45,10 @@ alias ll="exa -alFh --icons"
 alias tree="exa --tree -alFh"
 
 # editor
-alias v="nvim"
-alias vi="nvim"
-alias vim="nvim"
+alias v="lvim"
+alias vi="lvim"
+alias vim="lvim"
+alias nvim="lvim"
 
 # rusty
 alias cat="bat"
@@ -68,20 +69,20 @@ alias spf="while sleep 1; do spfetch > /tmp/spf; clear; /bin/cat /tmp/spf; done"
 # package manager #
 ###################
 
-# nala / apr
-# alias apt="nala"
-# alias update="nala upgrade"
-alias update="sudo dnf update"
+# nala / apt
+alias apt="nala"
+alias update="nala upgrade"
+# alias update="sudo dnf update"
 
 # nix
 # alias nix-in="nix-env -iA"
 # alias nix-un="nix-env -e"
 
 # pacstall
-# alias pac="pacstall"
-# autoload bashcompinit
-# bashcompinit
-# source /usr/share/bash-completion/completions/pacstall
+alias pac="pacstall"
+autoload bashcompinit
+bashcompinit
+source /usr/share/bash-completion/completions/pacstall
 
 #######
 # Fzf #

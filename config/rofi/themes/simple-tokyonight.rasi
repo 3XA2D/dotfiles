@@ -2,7 +2,7 @@
   font:   "Iosevka Nerd Font Medium 11";
 
   bg0     : #1a1b26;
-  bg1     : #1f2335;
+  bg1     : argb:95313553;
   bg2     : #24283b;
   bg3     : #414868;
   fg0     : #c0caf5;
@@ -31,7 +31,6 @@ element-icon, element-text, scrollbar {
 }
 
 window {
-  location : northwest;
   width    : 280px;
   x-offset : 4px;
   y-offset : 26px;
@@ -88,7 +87,7 @@ element normal active {
 }
 
 element selected {
-  text-color       : @bg1;
+  text-color       : @bg0;
   background-color : @accent;
 }
 

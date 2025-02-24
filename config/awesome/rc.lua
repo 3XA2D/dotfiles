@@ -217,7 +217,7 @@ local tasklist_buttons = gears.table.join(
 local function set_wallpaper(s)
 	-- Wallpaper
 	if beautiful.wallpaper then
-		local wallpaper = beautiful.wallpaper
+		local wallpaper = "/home/cxa/Pictures/Wallpaper/wallhaven-vq898p.png"
 		-- If wallpaper is a function, call it with the screen
 		if type(wallpaper) == "function" then
 			wallpaper = wallpaper(s)
@@ -292,14 +292,14 @@ awful.screen.connect_for_each_screen(function(s)
 		{
 			-- Right widgets
 			layout = wibox.layout.fixed.horizontal,
-			cmus_widget({
-				path_to_icons = "",
-			}),
-			spotify_widget({
-				play_icon = "",
-				pause_icon = "",
-				max_length = -1,
-			}),
+			-- cmus_widget({
+			-- 	path_to_icons = "",
+			-- }),
+			-- spotify_widget({
+			-- 	play_icon = "",
+			-- 	pause_icon = "",
+			-- 	max_length = -1,
+			-- }),
 			-- wibox.widget.textbox("|"),
 			clockWidget,
 			spacing = 10,
@@ -326,8 +326,8 @@ root.buttons(gears.table.join(
 -- {{{ Key bindings
 globalkeys = gears.table.join(
 	awful.key({ modkey }, "s", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
-	awful.key({ modkey }, "Left", awful.tag.viewprev, { description = "view previous", group = "tag" }),
-	awful.key({ modkey }, "Right", awful.tag.viewnext, { description = "view next", group = "tag" }),
+	awful.key({ modkey, "Control" }, "h", awful.tag.viewprev, { description = "view previous", group = "tag" }),
+	awful.key({ modkey, "Control" }, "l", awful.tag.viewnext, { description = "view next", group = "tag" }),
 	awful.key({ modkey }, "Escape", awful.tag.history.restore, { description = "go back", group = "tag" }),
 
 	awful.key({ modkey }, "j", function()
@@ -394,8 +394,8 @@ globalkeys = gears.table.join(
 
 	-- app shortcut
 	awful.key({ modkey }, "b", function()
-		awful.spawn("firefox")
-	end, { description = "open a web browser (firefox)", group = "launcher" }),
+		awful.spawn("brave-browser")
+	end, { description = "open a web browser (brave)", group = "launcher" }),
 	awful.key({ modkey, "Shift" }, "Return", function()
 		awful.spawn("nemo")
 	end, { description = "open a file browser (nemo)", group = "launcher" }),
@@ -423,7 +423,8 @@ globalkeys = gears.table.join(
 	awful.key({ modkey }, "r", function()
 		awful.util.spawn("rofi -show run")
 	end, { description = "program launcher", group = "launcher" }),
-	awful.key({ modkey }, "w", function()
+	awful.key({ modkey }, "w", 
+  function()
 		awful.util.spawn("web-bookmark")
 	end, { description = "browser bookmark", group = "launcher" })
 )
@@ -653,9 +654,9 @@ client.connect_signal("request::titlebars", function(c)
 end)
 
 -- Enable sloppy focus, so that focus follows mouse.
-client.connect_signal("mouse::enter", function(c)
-	c:emit_signal("request::activate", "mouse_enter", { raise = false })
-end)
+-- client.connect_signal("mouse::enter", function(c)
+-- 	c:emit_signal("request::activate", "mouse_enter", { raise = false })
+-- end)
 
 client.connect_signal("focus", function(c)
 	c.border_color = beautiful.border_focus
@@ -667,11 +668,13 @@ end)
 
 -- Autorun programs
 local autoApp = {
-	"startup",
+	"/home/cxa/.screenlayout/main.sh",
 	"nm-applet",
 	"kmix",
 	"syncthing serve --no-browser --logfile=default &",
 	'notify-send "$(fortune 100% fortunes | cowsay)"',
+  "picom",
+  "nitrogen --restore"
 }
 for _, v in ipairs(autoApp) do
 	awful.spawn.with_shell(v)
