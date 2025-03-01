@@ -402,7 +402,7 @@ globalkeys = gears.table.join(
 
 	-- logout menu
 	awful.key({ modkey }, "x", function()
-		logout_popup.launch()
+    awful.spawn("rofi -show power-menu -modi power-menu:/home/cxa/.config/script/rofi-power-menu")
 	end, { description = "Show logout screen", group = "custom" }),
 
 	awful.key({ modkey, "Control" }, "n", function()
