@@ -147,6 +147,12 @@ source /usr/share/bash-completion/completions/pacstall
 	--color=info:#7aa2f7,prompt:#7dcfff,pointer:#7dcfff 
 	--color=marker:#9ece6a,spinner:#9ece6a,header:#9ece6a'
 
+##########
+# Zoxide #
+##########
+
+eval "$(zoxide init --cmd cd zsh)"
+
 ###################
 # Custom Function #
 ###################
@@ -156,5 +162,5 @@ source /usr/share/bash-completion/completions/pacstall
 ##########
 
 # eval "$(starship init zsh)"
-eval "$(oh-my-posh init zsh --config '$HOME/.config/omp/tokyo.toml')"
+eval "$(oh-my-posh init zsh --config $HOME/.config/omp/tokyo.toml)"
 
