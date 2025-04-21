@@ -83,6 +83,10 @@ export PATH=$HOME/Dev/android-studio/bin:$PATH
 export PATH=$HOME/.config/script:$PATH
 export PATH=$PATH:$HOME/.spicetify
 
+# Obsidian REST api
+# In your .bashrc or .zshrc
+export OBSIDIAN_REST_API_KEY="354dc39e87584395e56e4b33e3f3b4a37ec01f664b712478749be3f581a02556"
+
 #########
 # Alias #
 #########
@@ -111,6 +115,7 @@ alias :q="exit"
 alias reload="source ~/.zshrc"
 alias 2ND-HDD="cd /run/media/cxa/2ND-HDD/"
 alias dl="aria2c"
+alias ..="cd .."
 
 # spfetch
 alias spf="while sleep 1; do spfetch > /tmp/spf; clear; /bin/cat /tmp/spf; done"

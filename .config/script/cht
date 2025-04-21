@@ -3,4 +3,4 @@
 lang="awk bash c cpp js latex lua rust python html css"
 choice=$(echo $lang | tr ' ' '\n' | sort | fzf)
 read -p "Query: " quer
-curl cht.sh/$choice/$(echo $quer | tr ' ' '+') | less
+curl cht.sh/$choice/$(echo $quer | tr ' ' '+') | bat --paging always
