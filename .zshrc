@@ -91,6 +91,9 @@ export OBSIDIAN_REST_API_KEY="354dc39e87584395e56e4b33e3f3b4a37ec01f664b71247874
 # Alias #
 #########
 
+# Wine
+alias w32='WINEPREFIX="$HOME/prefix32" WINEARCH=win32'
+
 # list file
 alias l="exa --icons"
 alias ls="exa --icons"
